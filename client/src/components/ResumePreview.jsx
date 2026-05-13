@@ -63,43 +63,40 @@ const ResumePreview = ({
                 {renderTemplate()}
             </div>
 
-            <style jsx>{`
-                @page {
-                    size: letter;
-                    margin: 0;
-                }
+           <style>{`
+  @page {
+    size: letter;
+    margin: 0;
+  }
 
-                @media print {
+  @media print {
+    html, body {
+      width: 8.5in;
+      height: 11in;
+      overflow: hidden;
+    }
 
-                    html,
-                    body {
-                        width: 8.5in;
-                        height: 11in;
-                        overflow: hidden;
-                    }
+    body * {
+      visibility: hidden;
+    }
 
-                    body * {
-                        visibility: hidden;
-                    }
+    #resume-preview, #resume-preview * {
+      visibility: visible;
+    }
 
-                    #resume-preview,
-                    #resume-preview * {
-                        visibility: visible;
-                    }
-
-                    #resume-preview {
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        width: 100%;
-                        height: auto;
-                        margin: 0;
-                        padding: 0;
-                        box-shadow: none !important;
-                        border: none !important;
-                    }
-                }
-            `}</style>
+    #resume-preview {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: auto;
+      margin: 0;
+      padding: 0;
+      box-shadow: none !important;
+      border: none !important;
+    }
+  }
+`}</style>
 
         </div>
     )
