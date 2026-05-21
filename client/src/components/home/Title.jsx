@@ -1,11 +1,14 @@
-
-const Title = ({title,description}) => {
+const Title = ({ title, description }) => {
   return (
-    <div className='text-center mt-6 text-slate-700'>
-      <h1 className="text-3xl font-bold text-slate-800">{title}</h1>
-      <p className="text-slate-600 mt-2">{description}</p>
+    <div className="max-w-2xl mx-auto mt-8 text-center">
+      <h2 className="text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
+        {title}
+      </h2>
+      <p className="mt-3 text-base leading-relaxed text-zinc-500">
+        {description}
+      </p>
     </div>
-  )
-}
+  );
+};
 
-export default Title
+export default Title;
