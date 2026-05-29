@@ -1,32 +1,40 @@
-import { useDispatch, useSelector } from "react-redux"
-import { Link, useNavigate } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../app/features/authSlice";
+import { LogOut } from "lucide-react";
 
 const Navbar = () => {
-    const {user} = useSelector(state => state.auth)
+  const { user } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-    const dispatch = useDispatch();
-    const navigate = useNavigate()
+  const logoutUser = () => {
+    navigate("/");
+    dispatch(logout());
+  };
 
-    const logoutUser = () =>{
-        navigate('/')
-        dispatch(logout())
-    }
   return (
-    <div className="shadow bg-white">
-        <nav className="flex items-center justify-between max-wx-7xl mx-auto py-4 px-6 text-slate-800 transition-all">
-        <Link>
-        <img src="/logo.svg" alt="logo" className="h-11 w-auto"/>
+    <header className="sticky top-0 z-40 bg-white border-b border-zinc-200/80">
+      <nav className="flex items-center justify-between py-3.5 page-container">
+        <Link to="/app">
+          <img src="/logo.svg" alt="Resume Builder" className="h-9 w-auto" />
         </Link>
         <div className="flex items-center gap-4 text-sm">
-            <p className="max-sm:hidden">Hi, {user?.name}</p>
-            <button onClick={logoutUser} className="bg-white hover:bg-slate-50 border border-gray-300 px-7 py-1.5 rounded-full active:scale-95 transition-all">
-                Logout
-            </button>
+          <p className="hidden font-medium text-zinc-600 sm:block">
+            Hi, {user?.name}
+          </p>
+          <button
+            type="button"
+            onClick={logoutUser}
+            className="btn-secondary gap-2 py-2 pl-4 pr-4"
+          >
+            <LogOut className="size-4" />
+            <span className="max-sm:hidden">Logout</span>
+          </button>
         </div>
-        </nav>
-    </div>
-  )
-}
+      </nav>
+    </header>
+  );
+};
 
-export default Navbar
+export default Navbar;

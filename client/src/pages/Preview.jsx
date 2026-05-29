@@ -28,31 +28,28 @@ const Preview = () => {
   }, []);
 
   return resumeData ? (
-    <div className="bg-slate-100">
-      <div className="max-w-3xl mx-auto py-10">
+    <div className="min-h-screen bg-zinc-100">
+      <div className="max-w-3xl py-12 mx-auto px-4">
         <ResumePreview
           data={resumeData}
           template={resumeData.template}
-          accentcolor={resumeData.accentcolor}
-          classes="py-4 bg-white"
+          accentColor={resumeData.accent_color}
+          classes="py-6 bg-white rounded-xl shadow-sm border border-zinc-200"
         />
       </div>
     </div>
   ) : (
-    <div>
+    <div className="app-shell">
       {isLoading ? (
         <Loader />
       ) : (
-        <div className="flex flex-col items-center justify-center h-screen">
-          <p className="text-center text-6xl text-slate-400 font-medium">
+        <div className="flex flex-col items-center justify-center h-screen px-4">
+          <p className="text-2xl font-semibold text-zinc-400 md:text-4xl">
             Resume not found
           </p>
-          <a
-            href="/"
-            className="mt-6 bg-green-500 hover:bg-green-600 text-white rounded-full px-6 h-9 m-1 ring-offset-1 ring-1 ring-green-400 flex items-center transition-colors"
-          >
-            <ArrowLeftIcon className="mr-2 size-4" />
-            go to home page
+          <a href="/" className="mt-8 btn-primary">
+            <ArrowLeftIcon className="size-4" />
+            Back to home
           </a>
         </div>
       )}

@@ -49,7 +49,7 @@ const SkillsForm = ({ data, onChange }) => {
                 <button
                     onClick={addSkill}
                     disabled={!newSkill.trim()}
-                    className="flex items-center gap-2 px-4 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="btn-primary py-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     <Plus className="size-4" />
                     Add
@@ -64,13 +64,13 @@ const SkillsForm = ({ data, onChange }) => {
                     {data.map((skill, index) => (
                         <span
                             key={index}
-                            className="flex items-center gap-1 px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm"
+                            className="flex items-center gap-1 px-3 py-1 text-sm rounded-md bg-zinc-100 text-zinc-800"
                         >
                             {skill}
 
                             <button
                                 onClick={() => removeSkill(index)}
-                                className="ml-1 hover:bg-blue-200 rounded-full p-0.5 transition-colors"
+                                className="p-0.5 ml-1 transition-colors rounded hover:bg-zinc-200"
                             >
                                 <X className="w-3 h-3" />
                             </button>

@@ -40,7 +40,7 @@ const ExperienceForm = ({ data, onChange }) => {
 
     try {
       const { data } = await api.post(
-        "/api/ai/enhanced-job-desc",
+        "/api/ai/enhance-job-desc",
         { userContent: prompt },
         { headers: { Authorization: token } }
       );
@@ -65,7 +65,7 @@ const ExperienceForm = ({ data, onChange }) => {
 
         <button
           onClick={addExperience}
-          className="flex items-center gap-2 px-3 py-1 text-sm bg-green-100 text-green-700 rounded-lg hover:bg-green-200 transition-colors"
+          className="ai-action-btn"
         >
           <Plus className="size-4" />
           Add Experience

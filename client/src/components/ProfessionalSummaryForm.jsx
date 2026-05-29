@@ -39,10 +39,10 @@ const ProfessionalSummaryForm = ({ data, onChange, setResumeData }) => {
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <div>
-          <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-900">
+          <h3 className="flex items-center gap-2 text-lg font-semibold text-zinc-900">
             Professional Summary
           </h3>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-zinc-500">
             Add summary for your resume here
           </p>
         </div>
@@ -50,7 +50,7 @@ const ProfessionalSummaryForm = ({ data, onChange, setResumeData }) => {
         <button
           disabled={isGenerating}
           onClick={generateSummary}
-          className="flex items-center gap-2 px-3 py-1 text-sm bg-purple-100 text-purple-700 rounded hover:bg-purple-200 transition-colors disabled:opacity-50"
+          className="ai-action-btn disabled:opacity-50"
         >
           {isGenerating ? (
             <Loader2 className="size-4 animate-spin" />
@@ -65,7 +65,7 @@ const ProfessionalSummaryForm = ({ data, onChange, setResumeData }) => {
         value={data || ""}
         onChange={(e) => onChange(e.target.value)}
         rows={7}
-        className="w-full p-3 mt-2 border text-sm border-gray-300 rounded-lg focus:ring focus:ring-blue-500 outline-none resize-none"
+        className="mt-2 resize-none"
         placeholder="Write a professional summary..."
       />
     </div>
